@@ -1,8 +1,8 @@
 const findTheOldest = function(array) {
 
-    let oldest = 0;
     let age = 0;
     let currentYear = new Date().getFullYear();
+    let oldest = 0;
 
     array.forEach(element => {
         if ('yearOfDeath' in element){
@@ -17,8 +17,7 @@ const findTheOldest = function(array) {
         }
     });
     return array.find(element => element.age === oldest);
-
-};
+}
 
 // Do not edit below this line
 module.exports = findTheOldest;
