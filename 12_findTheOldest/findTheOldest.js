@@ -1,4 +1,22 @@
-const findTheOldest = function() {
+const findTheOldest = function(array) {
+
+    let oldest = 0;
+    let age = 0;
+    let currentYear = new Date().getFullYear();
+
+    array.forEach(element => {
+        if ('yearOfDeath' in element){
+            age = element.yearOfDeath - element.yearOfBirth;
+        }
+        else{
+            age = currentYear - element.yearOfBirth;
+        }
+        element.age = age;
+        if (age > oldest){
+            oldest = age;
+        }
+    });
+    return array.find(element => element.age === oldest);
 
 };
 
